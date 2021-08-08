@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "ULAŞ",
+      "lastName": "Bozkurt",
+      "email": "ulas@mail.com",
+      "mobile": "54698741",
+      "address": "Sivas"
+    },
+    {
+      "id": 3,
+      "firstName": "Göksel",
+      "lastName": "Bilecen",
+      "email": "göksel@mail.com",
+      "mobile": "123456789",
+      "address": "Samsunn"
+    },
+    {
+      "id": 4,
+      "firstName": "mustafa",
+      "lastName": "aaaa",
+      "email": "mustafa@mail.com",
+      "mobile": "456987",
+      "address": "Konya"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

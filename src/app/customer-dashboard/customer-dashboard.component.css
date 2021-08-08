@@ -1,0 +1,12 @@
+/* form.ng-untouched.ng-pristine.ng-valid {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}
+div#navbarTogglerDemo02 {
+  display: flex;
+  justify-content: space-between;
+} */
+a.navbar-brand {
+  margin-right: 910px;
+}
