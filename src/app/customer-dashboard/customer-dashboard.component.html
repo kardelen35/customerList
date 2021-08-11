@@ -75,6 +75,7 @@
         <button (click)="deleteCustomer(row)" class="btn btn-danger mx-2">
           DELETE
         </button>
+        <button (click)="detailRoute()" class="btn btn-success">DETAIL</button>
       </td>
     </tr>
   </tbody>
@@ -133,7 +134,7 @@
               id="exampleInputPassword1"
             />
           </div>
-          <div class="mb-3">
+          <!-- <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
               >Mobile Number</label
             >
@@ -143,7 +144,25 @@
               class="form-control"
               id="exampleInputPassword1"
             />
-          </div>
+          </div> -->
+
+          <form action=" ">
+            <p>
+              <label>
+                Write down the E-Mails of the peoples you want to send the mail
+              </label>
+              <br />
+              <sub>
+                (You can enter multiple E-Mail with each seperated by comma)
+              </sub>
+              <input type="email" name="email" id="email" multiple size="50" />
+            </p>
+
+            <p>
+              <input type="submit" value="Submit" />
+            </p>
+          </form>
+
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label"
               >Address</label

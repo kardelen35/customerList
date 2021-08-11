@@ -5,12 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-
 import { RouterModule } from '@angular/router';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CustomerFilterPipe } from './pipe/customer-filter.pipe';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { CustomerFilterPipe } from './pipe/customer-filter.pipe';
     RouterModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

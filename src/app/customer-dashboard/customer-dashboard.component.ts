@@ -5,6 +5,7 @@ import { CustomerModel } from '../model/customer-dash board.model';
 import { FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
 import { delay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 declare let alertify: any;
 
@@ -20,11 +21,20 @@ export class CustomerDashboardComponent implements OnInit {
   showAdd!: boolean;
   showUpdate!: boolean;
   filterText = '';
+  visible: boolean = true;
+  selectable: boolean = true;
+  removable: boolean = true;
+  addOnBlur: boolean = true;
+  phoneNumbers = [];
+
+  // Enter, comma
+  // separatorKeysCodes = [ENTER, COMMA];
 
   constructor(
     private formbuilder: FormBuilder,
     private api: ApiService,
-    private authentication: AuthenticationService
+    private authentication: AuthenticationService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +49,27 @@ export class CustomerDashboardComponent implements OnInit {
   }
   public customerProperty = [{}];
 
+  add(event): void {
+    let input = event.input;
+    let value = event.value;
+
+    // Add our keyword
+    if ((value || '').trim()) {
+      this.phoneNumbers.push(value.trim());
+    }
+
+    // Reset the input value
+    if (input) {
+      input.value = '';
+    }
+  }
+  remove(keyword: any): void {
+    let index = this.phoneNumbers.indexOf(keyword);
+
+    if (index >= 0) {
+      this.phoneNumbers.splice(index, 1);
+    }
+  }
   clickAddCustomer() {
     this.formValue.reset();
     this.showAdd = true;
@@ -120,5 +151,8 @@ export class CustomerDashboardComponent implements OnInit {
   }
   logout() {
     this.authentication.logOut();
+  }
+  detailRoute() {
+    this.route.navigate(['detail']);
   }
 }
